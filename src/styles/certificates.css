@@ -1,0 +1,333 @@
+/* ===== СТРАНИЦА СЕРТИФИКАТОВ ===== */
+
+.certificates-page {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  position: relative;
+}
+
+.certificates-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.certificates-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Заголовок */
+.certificates-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.certificates-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.certificates-header p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-certificate-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-certificate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Сетка сертификатов */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Карточка сертификата */
+.certificate-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.certificate-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.certificate-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(167, 139, 250, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #a78bfa;
+}
+
+.certificate-info {
+  flex: 1;
+}
+
+.certificate-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.cert-issuer {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+.cert-date {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.certificate-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.download-cert-btn {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  color: #10b981;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.download-cert-btn:hover {
+  background: rgba(16, 185, 129, 0.25);
+  transform: translateY(-2px);
+}
+
+.delete-cert-btn {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  color: #f87171;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.delete-cert-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Пустое состояние */
+.empty-certificates {
+  text-align: center;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-certificates h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.empty-certificates p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary-glow-small {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Модальное окно */
+.modal-content-cert {
+  background: #1a1a2e;
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-content-cert h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group-cert {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group-cert label {
+  color: #a78bfa;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.input-group-cert input,
+.input-group-cert select {
+  width: 100%;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.input-group-cert input:focus,
+.input-group-cert select:focus {
+  outline: none;
+  border-color: #a78bfa;
+}
+
+.input-group-cert small {
+  color: #6b7280;
+  font-size: 0.7rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.upload-btn, .modal-buttons .cancel-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+}
+
+.upload-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+}
+
+.upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-buttons .cancel-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #9ca3af;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-buttons .cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .certificates-container {
+    padding: 1rem;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .certificate-card {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .certificate-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-content-cert {
+    padding: 1.5rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
+}

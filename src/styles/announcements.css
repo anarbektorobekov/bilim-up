@@ -1,0 +1,252 @@
+/* ===== ОБЪЯВЛЕНИЯ ===== */
+
+.announcements-container {
+  position: relative;
+}
+
+.announcement-bell {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bell:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.announcement-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #f59e0b;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.1rem 0.3rem;
+  border-radius: 50%;
+  min-width: 16px;
+  text-align: center;
+}
+
+.announcement-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  width: 400px;
+  max-height: 450px;
+  background: #1a1a2e;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.announcement-header h3 {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.add-announcement-btn {
+  background: rgba(167, 139, 250, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  color: #a78bfa;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.announcement-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 380px;
+}
+
+.announcement-item {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.announcement-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.announcement-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.announcement-title strong {
+  color: #f59e0b;
+  font-size: 0.9rem;
+}
+
+.announcement-badge-target {
+  background: rgba(167, 139, 250, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  color: #a78bfa;
+}
+
+.delete-announcement {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+}
+
+.delete-announcement:hover {
+  color: #ef4444;
+}
+
+.announcement-content {
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.65rem;
+  color: #6b7280;
+}
+
+.announcement-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+
+.announcement-empty .empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО - ПРОСТОЕ РЕШЕНИЕ ===== */
+/* ===== МОДАЛЬНОЕ ОКНО - ПО ЦЕНТРУ ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.announcements-modal {
+  max-width: 500px;
+  width: 90%;
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  position: relative;
+  margin-top: 50px;  /* ← ДОБАВЬ ЭТО - отступ сверху */
+}
+/* ===== ДЛЯ ПЕРЕТАСКИВАНИЯ ОКНА ===== */
+.modal-drag-handle {
+  cursor: grab;
+}
+
+.modal-drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-icon {
+  cursor: grab;
+  margin-right: 0.5rem;
+  color: #9ca3af;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  flex: 1;
+  margin: 0;
+}
+
+.announcements-modal {
+  transition: none; /* Убираем анимацию при перетаскивании */
+}
+/* ===== СТИЛИ ДЛЯ SELECT И OPTION ===== */
+
+.announcements-modal select {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white !important;
+  font-size: 0.9rem;
+  cursor: pointer;
+  appearance: none; /* Убираем стандартный стиль */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a78bfa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+.announcements-modal select option {
+  background: #1a1a2e !important;
+  color: white !important;
+  padding: 0.5rem;
+}
+
+.announcements-modal select option:hover,
+.announcements-modal select option:focus {
+  background: #2a2a3e !important;
+  color: white !important;
+}

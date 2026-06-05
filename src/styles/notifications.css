@@ -1,0 +1,193 @@
+/* ===== УВЕДОМЛЕНИЯ ===== */
+
+.notifications-container {
+  position: relative;
+}
+
+.notif-bell {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-bell:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.notif-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.1rem 0.3rem;
+  border-radius: 50%;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Исправлено позиционирование */
+.notif-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  width: 380px;
+  max-height: 450px;
+  background: #1a1a2e;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Остальные стили остаются без изменений */
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+}
+
+.notif-header h3 {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.mark-all-read {
+  background: none;
+  border: none;
+  color: #a78bfa;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.notif-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 380px;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notif-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.notif-item.unread {
+  background: rgba(167, 139, 250, 0.1);
+}
+
+.notif-icon {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.notif-icon.warning {
+  color: #f59e0b;
+}
+
+.notif-icon.ban {
+  color: #ef4444;
+}
+
+.notif-icon.success {
+  color: #10b981;
+}
+
+.notif-icon.default {
+  color: #a78bfa;
+}
+
+.notif-content {
+  flex: 1;
+}
+
+.notif-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.notif-message {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.notif-time {
+  font-size: 0.65rem;
+  color: #6b7280;
+}
+
+.notif-delete {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+}
+
+.notif-delete:hover {
+  color: #ef4444;
+}
+
+.notif-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+
+.notif-empty .empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .notif-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 20px 20px 0 0;
+    margin-top: 0;
+  }
+}

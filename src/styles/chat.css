@@ -1,0 +1,1143 @@
+/* ===== ЧАТ ===== */
+.chat-container-full {
+  display: flex;
+  height: calc(100vh - 80px);
+  background: #0a0a0f;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+/* Сайдбар чата */
+.chat-sidebar {
+  width: 320px;
+  background: rgba(15, 15, 25, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-sidebar-header h3 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.chat-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chat-tab {
+  flex: 1;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.chat-tab:hover {
+  color: white;
+}
+
+.chat-tab.active {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+.chat-search input {
+  width: 100%;
+  max-width: 250px;  /* ← Добавь эту строку */
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.chat-search input::placeholder {
+  color: #6b7280;
+}
+
+.create-group-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.create-group-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Список чатов */
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-item, .user-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-item:hover, .user-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chat-item.active {
+  background: rgba(167, 139, 250, 0.1);
+  border-left: 3px solid #a78bfa;
+}
+
+.chat-avatar, .user-avatar-chat {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.chat-info, .user-info-chat {
+  flex: 1;
+}
+
+.chat-name, .user-name {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.chat-last-message, .user-status {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Окно чата */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(5, 5, 10, 0.8);
+}
+
+.chat-window-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat-header-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.chat-header-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.chat-header-details span {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.chat-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-action-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.chat-action-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.chat-action-btn.report:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.chat-action-btn.leave:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+/* Сообщения */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 0.6rem 1rem;
+  border-radius: 18px;
+  position: relative;
+}
+
+.message-bubble.sent {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.message-bubble.received {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.message-sender {
+  font-size: 0.7rem;
+  color: #a78bfa;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  color: white;
+}
+
+.deleted-message {
+  font-style: italic;
+  color: #6b7280;
+}
+
+.message-time {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.delete-message-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: none;
+  font-size: 0.7rem;
+}
+
+.message-bubble:hover .delete-message-btn {
+  display: inline;
+}
+
+.delete-message-btn:hover {
+  color: #f87171;
+}
+
+/* Ввод сообщения */
+.chat-input-area {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.chat-input::placeholder {
+  color: #6b7280;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+}
+
+.chat-send-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.chat-send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Пустое состояние */
+.chat-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.chat-empty-icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.chat-empty h3 {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.chat-empty p {
+  color: #9ca3af;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.modal-content h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-content button:hover {
+  background: rgba(167, 139, 250, 0.15);
+  border-color: #a78bfa;
+}
+
+/* Админ функции в чате */
+.chat-action-btn.admin {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+.admin-badge {
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+}
+
+.message-sender {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #a78bfa;
+}
+
+.message-sender:hover {
+  text-decoration: underline;
+}
+
+.banned-message {
+  opacity: 0.5;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.modal-content.large {
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.user-stats {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.user-stats p {
+  color: #9ca3af;
+  margin: 0.3rem 0;
+}
+
+.admin-chat-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-chat-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.admin-chat-tab.active {
+  color: #a78bfa;
+  border-bottom: 2px solid #a78bfa;
+}
+
+.user-messages-list h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.messages-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-message-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.admin-message-text {
+  color: white;
+  font-size: 0.85rem;
+}
+
+.ban-section-chat, .warning-section-chat {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.ban-section-chat h4, .warning-section-chat h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.ban-section-chat select,
+.ban-section-chat input,
+.warning-section-chat textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.ban-section-chat select option {
+  background: #1a1a2e;
+}
+
+.ban-user-btn {
+  background: #ef4444;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.unban-user-btn {
+  margin-top: 0.5rem;
+  background: #10b981;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.warning-btn {
+  background: #f59e0b;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.close-modal {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(197, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .chat-container-full {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .chat-sidebar {
+    width: 100%;
+    max-height: 300px;
+  }
+  
+  .message-bubble {
+    max-width: 85%;
+  }
+  
+  .modal-content.large {
+    width: 95%;
+  }
+}
+/* Админ-функции в чате */
+.chat-action-btn.admin {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.admin-badge {
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+}
+
+.message-sender {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #a78bfa;
+}
+
+.message-sender:hover {
+  text-decoration: underline;
+}
+
+.banned-message {
+  opacity: 0.5;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.deleted-by-admin {
+  font-style: italic;
+  color: #f59e0b;
+}
+
+.admin-delete-message-btn {
+  background: none;
+  border: none;
+  color: #f59e0b;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  display: none;
+}
+
+.message-bubble:hover .admin-delete-message-btn {
+  display: inline;
+}
+
+.admin-delete-msg-btn {
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: none;
+  border-radius: 12px;
+  color: #f59e0b;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.admin-delete-msg-btn:hover {
+  background: rgba(245, 158, 11, 0.25);
+}
+
+.modal-content.large {
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.user-stats {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.user-stats p {
+  margin: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.user-stats .banned-info {
+  color: #ef4444;
+}
+
+.admin-chat-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.admin-chat-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-radius: 20px;
+}
+
+.admin-chat-tab:hover {
+  color: white;
+}
+
+.admin-chat-tab.active {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+.user-messages-list {
+  margin: 1rem 0;
+}
+
+.user-messages-list h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.messages-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-message-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-message-text {
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.ban-section-chat, .warning-section-chat {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.ban-section-chat h4, .warning-section-chat h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.ban-section-chat select,
+.ban-section-chat input,
+.warning-section-chat textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.ban-section-chat select option {
+  background: #1a1a2e;
+}
+
+.ban-user-btn {
+  background: #ef4444;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.unban-user-btn {
+  margin-top: 0.5rem;
+  background: #10b981;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.warning-btn {
+  background: #f59e0b;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.close-modal {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: white;
+}
+/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ЧАТА ===== */
+
+/* Цвета текста в сообщениях */
+.message-bubble.sent .message-text {
+  color: white;
+}
+
+.message-bubble.received .message-text {
+  color: #e5e7eb;
+}
+
+.deleted-message {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.deleted-by-admin {
+  color: #f59e0b;
+  font-style: italic;
+}
+
+/* Цвета в шапке чата */
+.chat-header-details h3 {
+  color: white;
+}
+
+.chat-header-details span {
+  color: #9ca3af;
+}
+
+/* Цвета в списке чатов */
+.chat-name, .user-name {
+  color: white;
+}
+
+.chat-last-message, .user-status {
+  color: #9ca3af;
+}
+
+/* Цвета в сайдбаре */
+.chat-sidebar-header h3 {
+  color: white;
+}
+
+/* Кнопки действий */
+.chat-action-btn {
+  color: #9ca3af;
+}
+
+.chat-action-btn:hover {
+  color: white;
+}
+
+.chat-action-btn.report:hover {
+  color: #f87171;
+}
+
+.chat-action-btn.leave:hover {
+  color: #f87171;
+}
+
+.chat-action-btn.admin {
+  color: #f59e0b;
+}
+
+/* Поле ввода */
+.chat-input {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.chat-input::placeholder {
+  color: #6b7280;
+}
+/* ===== МОДАЛЬНОЕ ОКНО УПРАВЛЕНИЯ ПОЛЬЗОВАТЕЛЕМ - ПОЛНОСТЬЮ СВЕТЛЫЙ ТЕКСТ ===== */
+
+.modal-content.large {
+  background: #1a1a2e;
+}
+
+.modal-header h3 {
+  color: white !important;
+}
+
+.user-stats p {
+  color: #e5e7eb !important;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.user-stats p strong {
+  color: white !important;
+}
+
+.user-stats .banned-info {
+  color: #ef4444 !important;
+}
+
+/* Предупреждения */
+.user-warnings-list h4 {
+  color: white !important;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.warning-item {
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #f59e0b;
+}
+
+.warning-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-size: 0.7rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.warning-header span:first-child {
+  color: #f59e0b !important;
+  font-weight: 600;
+}
+
+.warning-header span:last-child {
+  color: #9ca3af !important;
+}
+
+.warning-text {
+  color: #e5e7eb !important;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.no-warnings {
+  color: #9ca3af !important;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Сообщения пользователя */
+.user-messages-list h4 {
+  color: white !important;
+  margin-bottom: 0.8rem;
+}
+
+.admin-message-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-message-header span {
+  color: #9ca3af !important;
+}
+
+.admin-message-text {
+  color: #e5e7eb !important;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* Разделы бана и предупреждения */
+.ban-section-chat h4,
+.warning-section-chat h4 {
+  color: white !important;
+  margin-bottom: 0.5rem;
+}
+
+.ban-section-chat label,
+.warning-section-chat label {
+  color: #9ca3af !important;
+  font-size: 0.8rem;
+}
+
+.ban-section-chat select,
+.ban-section-chat input,
+.warning-section-chat textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white !important;
+}
+
+.ban-section-chat select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+.ban-section-chat input::placeholder,
+.warning-section-chat textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Кнопки */
+.ban-user-btn {
+  background: #ef4444;
+  color: white !important;
+  font-weight: 500;
+}
+
+.unban-user-btn {
+  background: #10b981;
+  color: white !important;
+  font-weight: 500;
+}
+
+.warning-btn {
+  background: #f59e0b;
+  color: white !important;
+  font-weight: 500;
+}
+
+.close-modal {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white !important;
+  font-weight: 500;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+/* ===== АДАПТИВНЫЙ ЧАТ ===== */
+
+@media (max-width: 768px) {
+  .chat-container-full {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .chat-sidebar {
+    width: 100%;
+    max-height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .chat-window {
+    height: 60vh;
+  }
+  
+  .chat-window-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .chat-header-actions {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .message-bubble {
+    max-width: 85%;
+  }
+  
+  .chat-input-area {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .chat-send-btn {
+    width: 100%;
+  }
+  
+  .notif-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .modal-content.large {
+    width: 95%;
+    max-height: 90vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-sidebar-header h3 {
+    font-size: 1rem;
+  }
+  
+  .chat-tab {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+  
+  .chat-name, .user-name {
+    font-size: 0.85rem;
+  }
+  
+  .chat-last-message {
+    font-size: 0.7rem;
+  }
+  
+  .chat-avatar, .user-avatar-chat {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

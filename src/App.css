@@ -1,0 +1,3144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Навбар */
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.signup-link {
+  background: white;
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Герой контент */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero-badge {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Секция курсов - белый фон */
+.courses-section {
+  background: white;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.courses-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-card {
+  background: #f8f9fa;
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid #e9ecef;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.course-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.course-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  color: #6c757d;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.course-price {
+  color: #764ba2;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.course-lessons {
+  color: #6c757d;
+  font-size: 0.7rem;
+}
+
+.course-btn {
+  width: 100%;
+  background: #667eea;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 30px;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.course-btn:hover {
+  background: #5a67d8;
+}
+
+/* Футер */
+.footer {
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 3rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.social-link:hover {
+  color: white;
+}
+
+.footer-copyright {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.7rem;
+}
+
+/* Меню пользователя */
+.user-menu-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.user-nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.user-nav-link:hover {
+  color: white;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    justify-content: center;
+  }
+  
+  .user-menu-row {
+    justify-content: center;
+  }
+}
+/* ===== АДМИН ПАНЕЛЬ ===== */
+.admin-panel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-header {
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+/* Табы */
+.dashboard-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0;
+}
+
+.dash-tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 0;
+  position: relative;
+}
+
+.dash-tab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dash-tab.active {
+  color: white;
+  background: transparent;
+}
+
+.dash-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #a855f7);
+  border-radius: 2px;
+}
+
+/* Таблица */
+.admin-table-wrapper {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+.admin-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  background: rgba(255,255,255,0.05);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.admin-table-header .table-col {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+
+.admin-table-row:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.table-col {
+  display: flex;
+  align-items: center;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: white;
+}
+
+.role-select {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.role-select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+.admin-action-btn {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  color: #a855f7;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-action-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+/* Пустое состояние */
+.admin-empty {
+  text-align: center;
+  padding: 4rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.admin-empty h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-empty p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Адаптив для админки */
+@media (max-width: 768px) {
+  .admin-table-header,
+  .admin-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .admin-table-header {
+    display: none;
+  }
+  
+  .admin-table-row {
+    padding: 1rem;
+  }
+  
+  .table-col {
+    justify-content: space-between;
+  }
+  
+  .table-col::before {
+    content: attr(data-label);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+  }
+  
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+}
+/* ===== БЛОКИ СТАТИСТИКИ ===== */
+.stats-container-block {
+  max-width: 1200px;
+  margin: -2rem auto 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card-block {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.stat-card-block:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-number-block {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label-block {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Адаптив для блоков статистики */
+@media (max-width: 1024px) {
+  .stats-container-block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container-block {
+    grid-template-columns: 1fr;
+    margin-top: -1rem;
+  }
+}
+/* ===== ПРОФИЛЬ ПРИ КЛИКЕ НА АВАТАРКУ ===== */
+.user-avatar-wrapper {
+  position: relative;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+}
+
+/* Выпадающее меню профиля */
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 12px;
+  background: rgba(15, 15, 25, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  min-width: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-header {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.profile-role {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  display: inline-block;
+  color: #a855f7;
+}
+
+.profile-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 4px 0;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.profile-menu-item.logout {
+  color: #ff6b6b;
+}
+
+.profile-menu-item.logout:hover {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .profile-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    animation: slideUp 0.2s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .user-menu-row {
+    gap: 0.8rem;
+  }
+  
+  .user-nav-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== СТУДЕНЧЕСКИЙ ДАШБОРД ===== */
+.student-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Статистика */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card-dash {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+/* Табы */
+.dashboard-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.dash-tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.dash-tab:hover {
+  color: white;
+}
+
+.dash-tab.active {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+/* Карточки курсов */
+.courses-list-dash {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.course-card-dash {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s;
+}
+
+.course-card-dash:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.course-card-dash.completed {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.course-info-dash {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+.course-icon-dash {
+  width: 60px;
+  height: 60px;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.course-details {
+  flex: 1;
+}
+
+.course-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.course-details p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  margin-bottom: 0.3rem;
+}
+
+.progress-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lessons-info {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.progress-bar-dash {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill-dash {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #a855f7);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.completion-badge {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.completed-badge {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.certificate-link {
+  color: #a855f7;
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.continue-btn, .review-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.continue-btn:hover, .review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.review-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Пустое состояние */
+.empty-courses {
+  text-align: center;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-courses h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-courses p {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .student-dashboard {
+    padding: 1rem;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .course-card-dash {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .course-info-dash {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .continue-btn, .review-btn {
+    width: 100%;
+  }
+}
+/* ===== СТРАНИЦА ПРОФИЛЯ ===== */
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Аватар секция */
+.profile-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  overflow: hidden;
+}
+
+.profile-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info-basic h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.profile-info-basic p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.profile-role-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #a855f7;
+}
+
+/* Вкладки */
+.profile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile-tab:hover {
+  color: white;
+}
+
+.profile-tab.active {
+  color: white;
+  border-bottom: 2px solid #a855f7;
+}
+
+/* Формы профиля */
+.profile-form-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.profile-field label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-value {
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-edit-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-edit-form .form-group label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.profile-edit-form .form-group input,
+.profile-edit-form .form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.8rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.profile-edit-form .form-group textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Смена пароля */
+.profile-password-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.profile-password-section h3 {
+  margin-bottom: 1.5rem;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.password-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.password-form .form-group label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.password-form .form-group input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.8rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Сообщения */
+.profile-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.profile-message.success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.profile-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-avatar-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+}
+/* ===== ПАНЕЛЬ ПРЕПОДАВАТЕЛЯ ===== */
+.teacher-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header-flex h3 {
+  font-size: 1.2rem;
+}
+
+/* Форма добавления курса */
+.add-course-form-dash {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-course-form-dash input,
+.add-course-form-dash textarea,
+.add-course-form-dash select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.8rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.add-course-form-dash textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Карточка курса учителя */
+.course-card-dash.teacher-course {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.course-meta-teacher {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.course-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.edit-btn, .delete-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.edit-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Студенты */
+.students-list-dash {
+  margin-top: 1rem;
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.student-card-dash {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.student-card-dash:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.student-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.student-info p {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.2rem;
+}
+
+.student-courses {
+  font-size: 0.7rem;
+  color: #a855f7;
+}
+
+.message-student-btn {
+  padding: 0.4rem 1rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: none;
+  border-radius: 20px;
+  color: #a855f7;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.message-student-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+/* ===== КОНСТРУКТОР КУРСОВ ===== */
+.constructor-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.constructor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.constructor-header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.constructor-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.constructor-tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.constructor-tab.active {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+/* Основная информация */
+.constructor-main {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Уровни */
+.constructor-levels {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.levels-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.level-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.level-item.active {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.level-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.level-number {
+  width: 28px;
+  height: 28px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.level-info input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Уроки */
+.constructor-lessons {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.lessons-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.lesson-item.active {
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.lesson-number {
+  width: 28px;
+  height: 28px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.lesson-editor {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Тесты */
+.constructor-tests {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.question-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.options-list {
+  margin-top: 1rem;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.option-item input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+
+.option-item input[type="text"] {
+  flex: 1;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .constructor-levels,
+  .constructor-lessons {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .constructor-tabs {
+    flex-wrap: wrap;
+  }
+}
+/* ===== КОНСТРУКТОР - СПИСОК КУРСОВ ===== */
+.my-courses-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.my-courses-list h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.courses-grid-constructor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card-constructor {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.course-card-constructor:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.course-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course-card-header .course-icon {
+  font-size: 2rem;
+}
+
+.course-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.course-card-constructor p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.course-meta-constructor {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.course-actions-constructor {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-course-btn, .delete-course-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-course-btn {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.edit-course-btn:hover {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+.delete-course-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.delete-course-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #a855f7;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.constructor-header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-level-btn, .add-lesson-btn, .add-question-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px dashed rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  color: #a855f7;
+  cursor: pointer;
+}
+/* ===== КОНСТРУКТОР ===== */
+.constructor-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #0a0a0a;
+  min-height: calc(100vh - 80px);
+  border-radius: 0;
+}
+
+.constructor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.constructor-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.constructor-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Табы */
+.constructor-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.constructor-tab {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.constructor-tab:hover {
+  color: white;
+}
+
+.constructor-tab.active {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
+/* Основная информация */
+.constructor-main {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Уровни */
+.constructor-levels {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+}
+
+.levels-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.level-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.level-item.active {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.level-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.level-number {
+  width: 28px;
+  height: 28px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.level-info input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+}
+
+.delete-level-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.delete-level-btn:hover {
+  color: #ef4444;
+}
+
+.add-level-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px dashed rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  color: #a855f7;
+  cursor: pointer;
+}
+
+.level-editor {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.level-editor h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.level-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Уроки */
+.constructor-lessons {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.lessons-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.lesson-item.active {
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.lesson-number {
+  width: 26px;
+  height: 26px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  margin-right: 0.6rem;
+}
+
+.lesson-item span:not(.lesson-number) {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.delete-lesson-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.delete-lesson-btn:hover {
+  color: #ef4444;
+}
+
+.add-lesson-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px dashed rgba(168, 85, 247, 0.4);
+  border-radius: 10px;
+  color: #a855f7;
+  cursor: pointer;
+}
+
+.lesson-editor {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Тесты */
+.constructor-tests {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.delete-test-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+.question-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.delete-question-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.question-input {
+  width: 100%;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.option-item input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #a855f7;
+}
+
+.option-item input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.add-question-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px dashed rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  color: #a855f7;
+  cursor: pointer;
+}
+
+/* Список курсов в конструкторе */
+.my-courses-list {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.my-courses-list h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.courses-grid-constructor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.course-card-constructor {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: all 0.2s;
+}
+
+.course-card-constructor:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.course-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.course-card-header .course-icon {
+  font-size: 1.8rem;
+}
+
+.course-card-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.course-card-constructor p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.course-meta-constructor {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  flex-wrap: wrap;
+}
+
+.course-actions-constructor {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.edit-course-btn, .delete-course-btn {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #a855f7;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .constructor-container {
+    padding: 1rem;
+  }
+  
+  .constructor-levels,
+  .constructor-lessons {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .constructor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .courses-grid-constructor {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Стили для карточек курсов на главной */
+.course-image {
+  position: relative;
+  height: 140px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.course-icon {
+  font-size: 3rem;
+}
+
+.course-price-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.course-level, .course-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Пустое состояние для курсов */
+.empty-courses {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  grid-column: span 4;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-courses h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.empty-courses p {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Карточки курсов */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(168,85,247,0.3);
+}
+
+.course-info {
+  padding: 1.2rem;
+}
+
+.course-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-info p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.course-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: rgba(168,85,247,0.2);
+  border: 1px solid rgba(168,85,247,0.3);
+  border-radius: 30px;
+  color: #a855f7;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.course-btn:hover {
+  background: rgba(168,85,247,0.3);
+}
+/* ===== АДМИН ПАНЕЛЬ ===== */
+.admin-panel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-tab {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.admin-tab.active {
+  background: rgba(168,85,247,0.2);
+  color: #a855f7;
+}
+
+/* Таблица пользователей */
+.banned-row {
+  background: rgba(239,68,68,0.1);
+  opacity: 0.7;
+}
+
+.status-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.status-badge.active {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.status-badge.banned {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+
+/* Карточки жалоб */
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 1.2rem;
+  border-left: 3px solid #ef4444;
+}
+
+.report-card.resolved {
+  border-left-color: #22c55e;
+  opacity: 0.7;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.report-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.report-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.resolve-btn {
+  background: rgba(34,197,94,0.2);
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: #22c55e;
+  cursor: pointer;
+}
+
+.ban-btn {
+  background: rgba(239,68,68,0.2);
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* Забаненные */
+.banned-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.banned-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banned-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.unban-btn {
+  background: rgba(34,197,94,0.2);
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: #22c55e;
+  cursor: pointer;
+}
+
+/* Сообщения */
+.messages-admin {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.user-selector select {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.messages-list-admin {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.admin-message-item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.admin-message-text {
+  font-size: 0.85rem;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+}
+
+.ban-section, .warning-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+.ban-section select, .ban-section input, .warning-section textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.ban-user-btn {
+  background: #ef4444;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.warning-btn {
+  background: #f59e0b;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.close-modal {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+/* Стили для админ-функций в чате */
+.chat-action-btn.admin {
+  background: rgba(168,85,247,0.2);
+  color: #a855f7;
+}
+
+.admin-badge {
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+}
+
+.message-sender {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.message-sender:hover {
+  text-decoration: underline;
+}
+
+.banned-message {
+  opacity: 0.5;
+  background: rgba(239,68,68,0.1);
+}
+
+.modal-content.large {
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.user-stats {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.admin-chat-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-chat-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.admin-chat-tab.active {
+  color: #a855f7;
+  border-bottom: 2px solid #a855f7;
+}
+
+.user-messages-list {
+  margin: 1rem 0;
+}
+
+.messages-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ban-section-chat, .warning-section-chat {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+.ban-section-chat select,
+.ban-section-chat input,
+.warning-section-chat textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.unban-user-btn {
+  margin-top: 0.5rem;
+  background: #22c55e;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ===== АДМИН ПАНЕЛЬ ПОЛНАЯ ===== */
+.admin-panel-full {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #0a0a0a;
+  min-height: calc(100vh - 80px);
+}
+
+.admin-header-full h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header-full p {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Статистика */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.admin-stat-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.admin-stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.admin-stat-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+
+.admin-stat-detail {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.5rem;
+}
+
+/* Табы */
+.admin-tabs-full {
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-full {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.tab-active-full {
+  background: rgba(168,85,247,0.2);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: #a855f7;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+/* Таблица */
+.admin-table-full {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.table-header-full {
+  display: grid;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.table-body-full {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table-row-full {
+  display: grid;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+
+.table-row-full:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.banned-row-full {
+  background: rgba(239,68,68,0.1);
+  opacity: 0.8;
+}
+
+/* Колонки таблицы пользователей */
+.table-header-full .col-user { width: 35%; }
+.table-header-full .col-role { width: 20%; }
+.table-header-full .col-status { width: 25%; }
+.table-header-full .col-actions { width: 20%; }
+
+.table-row-full .col-user { width: 35%; }
+.table-row-full .col-role { width: 20%; }
+.table-row-full .col-status { width: 25%; }
+.table-row-full .col-actions { width: 20%; }
+
+.user-info-full {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar-mini {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-email-full {
+  font-weight: 500;
+}
+
+.user-id-full {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.role-select-full {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.status-active-full {
+  color: #22c55e;
+  font-size: 0.8rem;
+}
+
+.status-banned-full {
+  color: #ef4444;
+  font-size: 0.8rem;
+}
+
+/* Кнопки админа */
+.admin-btn-small {
+  background: rgba(168,85,247,0.2);
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: #a855f7;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.admin-btn-danger {
+  background: rgba(239,68,68,0.2);
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* Карточки жалоб */
+.reports-full {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-card-full {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 1.2rem;
+  border-left: 3px solid #ef4444;
+}
+
+.report-card-full.resolved {
+  border-left-color: #22c55e;
+  opacity: 0.7;
+}
+
+.report-header-full {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.report-status-full {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.report-status-full.pending {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+
+.report-status-full.resolved {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.report-actions-full {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.resolve-btn-full, .ban-btn-full {
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.resolve-btn-full {
+  background: rgba(34,197,94,0.2);
+  border: none;
+  color: #22c55e;
+}
+
+/* Забаненные */
+.banned-full {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.banned-card-full {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banned-info-full {
+  display: flex;
+  gap: 1rem;
+}
+
+.unban-btn-full {
+  background: rgba(34,197,94,0.2);
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: #22c55e;
+  cursor: pointer;
+}
+
+/* Пустое состояние */
+.empty-full {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+}
+
+/* Модальное окно */
+.modal-overlay-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content-full {
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-section-full {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.role-btn:hover {
+  background: rgba(168,85,247,0.3);
+}
+
+.close-modal-full {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .admin-panel-full {
+    padding: 1rem;
+  }
+  
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .table-header-full, .table-row-full {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .table-header-full {
+    display: none;
+  }
+  
+  .col-user, .col-role, .col-status, .col-actions {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .col-role::before { content: "Роль: "; color: #666; }
+  .col-status::before { content: "Статус: "; color: #666; }
+  .col-actions::before { content: "Действия: "; color: #666; }
+}

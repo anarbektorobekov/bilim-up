@@ -1,0 +1,152 @@
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .constructor-levels,
+  .constructor-lessons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    justify-content: center;
+  }
+  
+  .user-menu-row {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  .user-nav-link {
+    font-size: 0.75rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    margin-top: -1rem;
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .course-card-dash {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .course-info-dash {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .continue-btn, .review-btn {
+    width: 100%;
+  }
+  
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-panel-full {
+    padding: 1rem;
+  }
+  
+  .table-header-full {
+    display: none;
+  }
+  
+  .table-row-full {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .col-user, .col-role, .col-status, .col-actions {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .col-role::before { content: "Роль: "; color: var(--text-darker); }
+  .col-status::before { content: "Статус: "; color: var(--text-darker); }
+  .col-actions::before { content: "Действия: "; color: var(--text-darker); }
+  
+  .constructor-container {
+    padding: 1rem;
+  }
+  
+  .constructor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .constructor-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .chat-container-full {
+    flex-direction: column;
+  }
+  
+  .chat-sidebar {
+    width: 100%;
+    max-height: 300px;
+  }
+  
+  .profile-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    animation: slideUp 0.2s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}

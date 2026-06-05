@@ -1,0 +1,465 @@
+/* ===== КАБИНЕТ СТУДЕНТА ===== */
+
+.dashboard-modern {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  position: relative;
+}
+
+.dashboard-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.dashboard-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Приветствие */
+.dashboard-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.welcome-content h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.username {
+  background: linear-gradient(135deg, #a78bfa 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-content p {
+  color: #9ca3af;
+}
+
+.welcome-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  color: #a78bfa;
+  font-size: 0.85rem;
+}
+
+/* Карточки статистики */
+.stats-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card-dashboard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.stat-card-dashboard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.stat-icon-dashboard {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value-dashboard {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label-dashboard {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* Табы */
+.dashboard-tabs-modern {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.dash-tab-modern {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: all 0.2s;
+}
+
+.dash-tab-modern:hover {
+  color: white;
+}
+
+.dash-tab-modern.active {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+/* Карточки курсов */
+.courses-grid-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.course-card-dashboard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.course-card-dashboard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.course-card-dashboard.completed {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.course-card-left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+.course-icon-large {
+  width: 70px;
+  height: 70px;
+  background: rgba(167, 139, 250, 0.15);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.completed-icon {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.course-info-dashboard {
+  flex: 1;
+}
+
+.course-info-dashboard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.course-info-dashboard p {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-meta-dashboard {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.progress-section {
+  max-width: 300px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #a78bfa;
+  margin-bottom: 0.3rem;
+}
+
+.progress-bar-dashboard {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill-dashboard {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+/* Кнопки */
+.continue-btn-glow, .review-btn-glow {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.continue-btn-glow:hover, .review-btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}
+
+.review-btn-glow {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Бейджи */
+.completion-badge-dashboard {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.completed-badge-glow {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.certificate-link-glow {
+  color: #a78bfa;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+/* Пустое состояние */
+.empty-state-dashboard {
+  text-align: center;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state-dashboard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.empty-state-dashboard p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary-glow-small {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .stats-grid-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-welcome {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stats-grid-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .course-card-dashboard {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .course-card-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .course-meta-dashboard {
+    justify-content: center;
+  }
+  
+  .progress-section {
+    max-width: 100%;
+  }
+  
+  .continue-btn-glow, .review-btn-glow {
+    width: 100%;
+  }
+  
+  .dashboard-tabs-modern {
+    justify-content: center;
+  }
+}
+/* ===== АДАПТИВНЫЕ КАБИНЕТЫ ===== */
+
+@media (max-width: 1024px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-welcome {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .welcome-stats {
+    justify-content: center;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .stat-card-dash {
+    padding: 1rem;
+  }
+  
+  .stat-value-dashboard {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-tabs-modern {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .dash-tab-modern {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .course-card-dashboard {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .course-info-dash {
+    flex-direction: column;
+  }
+  
+  .course-meta-dashboard {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .continue-btn-glow, .review-btn-glow {
+    width: 100%;
+  }
+  
+  .teacher-avatar-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .students-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .student-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .stat-badge {
+    font-size: 0.7rem;
+  }
+  
+  .course-details h3 {
+    font-size: 1rem;
+  }
+}

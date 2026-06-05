@@ -1,0 +1,992 @@
+/* ===== КАБИНЕТ УЧИТЕЛЯ - ТЁМНАЯ ТЕМА ===== */
+
+.teacher-dashboard {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  position: relative;
+}
+
+.profile-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.dashboard-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Заголовок */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: #9ca3af;
+}
+
+/* Аватар учителя */
+.teacher-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 28px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teacher-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.teacher-info h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.teacher-info p {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.teacher-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  background: rgba(167, 139, 250, 0.15);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #a78bfa;
+}
+
+/* Статистика */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #a78bfa;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+/* Табы */
+.dashboard-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: white;
+}
+
+.tab-btn.active {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+}
+
+/* Список курсов */
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.course-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.course-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.course-card.teacher {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.course-card-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.course-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(167, 139, 250, 0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.course-details {
+  flex: 1;
+}
+
+.course-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.course-details p {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.3rem;
+  font-size: 0.65rem;
+  color: #6b7280;
+}
+
+.meta-level, .meta-duration, .meta-students, .meta-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* Кнопки действий */
+.course-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.edit-btn, .delete-btn, .continue-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.edit-btn {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  color: #a78bfa;
+}
+
+.edit-btn:hover {
+  background: rgba(167, 139, 250, 0.25);
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  transform: translateY(-2px);
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Прогресс */
+.progress-section {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: #a78bfa;
+  margin-bottom: 0.2rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+/* Студенты */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.student-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s;
+}
+
+.student-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.student-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-info h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.student-info p {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+.student-stats {
+  font-size: 0.65rem;
+  color: #a78bfa;
+}
+
+.message-btn {
+  padding: 0.3rem 0.8rem;
+  background: rgba(167, 139, 250, 0.15);
+  border: none;
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.message-btn:hover {
+  background: rgba(167, 139, 250, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Пустое состояние */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.empty-state p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.create-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .teacher-avatar-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .course-card-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .course-meta {
+    justify-content: center;
+  }
+  
+  .student-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dashboard-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 3rem;
+  color: #9ca3af;
+}
+/* ===== СТУДЕНТЫ - ПОИСК И ДЕТАЛИ ===== */
+.students-section {
+  width: 100%;
+}
+
+.students-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.students-search .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.students-search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.students-search-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+}
+
+.search-clear {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.students-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Детали студента */
+.student-details-modal {
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.student-info-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.student-large-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.student-basic-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.student-basic-info p {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.student-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #a78bfa;
+}
+
+/* Сводная статистика */
+.student-summary-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+}
+
+.summary-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary-label {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+/* Список курсов студента */
+.student-courses-list h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.student-course-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-title-info {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.course-icon {
+  font-size: 1.5rem;
+}
+
+.course-name {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.course-meta-small {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.65rem;
+  color: #6b7280;
+}
+
+.status-completed {
+  color: #10b981;
+  font-size: 0.75rem;
+}
+
+.status-studying {
+  color: #f59e0b;
+  font-size: 0.75rem;
+}
+
+.course-progress-detail {
+  margin-bottom: 0.8rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-bottom: 0.3rem;
+}
+
+.progress-bar-big {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill-big {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  border-radius: 4px;
+}
+
+/* Результаты тестов */
+.test-scores {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.test-scores-title {
+  font-size: 0.7rem;
+  color: #a78bfa;
+  margin-bottom: 0.5rem;
+}
+
+.test-scores-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.test-score-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+.score.passed {
+  color: #10b981;
+}
+
+.score.failed {
+  color: #ef4444;
+}
+
+/* Время обучения */
+.course-time-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin: 0.8rem 0;
+}
+
+/* Кнопка просмотра курса */
+.view-course-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 30px;
+  color: #a78bfa;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-course-btn:hover {
+  background: rgba(99, 102, 241, 0.25);
+  transform: translateY(-2px);
+}
+
+.close-modal-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .student-summary-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .student-details-modal {
+    padding: 1rem;
+  }
+  
+  .student-info-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Аватары студентов */
+.student-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+}
+
+.student-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-large-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+}
+
+.student-large-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ===== ОТЗЫВЫ В КАБИНЕТЕ УЧИТЕЛЯ ===== */
+.reviews-teacher-section {
+  margin-top: 1rem;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section-header-flex h3 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.reviews-count-total {
+  background: rgba(167,139,250,0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 0.8rem;
+}
+
+.reviews-teacher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-teacher-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.2s;
+}
+
+.review-teacher-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(167,139,250,0.3);
+}
+
+.review-teacher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.review-course-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.course-icon {
+  font-size: 1.2rem;
+}
+
+.course-title {
+  color: #a78bfa;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.review-rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.review-rating-stars .filled {
+  color: #fbbf24;
+  font-size: 0.8rem;
+}
+
+.review-rating-stars .empty {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.review-rating-stars .rating-value {
+  color: #fbbf24;
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
+
+.review-teacher-body {
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.reviewer-avatar {
+  font-size: 1rem;
+}
+
+.reviewer-name {
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+.review-date {
+  color: #6b7280;
+  font-size: 0.7rem;
+}
+
+.review-comment-text {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(167,139,250,0.3);
+}
+
+.review-teacher-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.reply-btn {
+  background: rgba(167,139,250,0.15);
+  border: 1px solid rgba(167,139,250,0.3);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reply-btn:hover {
+  background: rgba(167,139,250,0.25);
+  transform: translateY(-2px);
+}
